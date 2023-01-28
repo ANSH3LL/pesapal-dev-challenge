@@ -38,37 +38,37 @@ In future, other command syntax could be implemented to allow clients to send co
 ## Code Overview
 The server runs a thread to handle incoming client connections. When a connection is received and the server is not yet full, a new thread is created to handle communication with the individual client.
 
-### Connection Handling
-https://github.com/ansh3ll/pesapal-dev-challenge
+#### Connection Handling
+https://github.com/ANSH3LL/pesapal-dev-challenge/blob/4383bb321058776605364583181eec91b4c53f1b/server.py#L54-L78
 
-### Client Thread
-https://github.com/ansh3ll/pesapal-dev-challenge
+#### Client Thread
+https://github.com/ANSH3LL/pesapal-dev-challenge/blob/4383bb321058776605364583181eec91b4c53f1b/server.py#L80-L100
 
 Client objects are stored in a dictionary with their rank as the key. This key is subject to change on the event of a client disconnecting from the server and a promotion of lower-ranking clients taking place.
 
-### Promotion Logic
-https://github.com/ansh3ll/pesapal-dev-challenge
+#### Promotion Logic
+https://github.com/ANSH3LL/pesapal-dev-challenge/blob/4383bb321058776605364583181eec91b4c53f1b/server.py#L117-L139
 
 The server broadcasts messages to clients when various events such as connection and disconnection of clients occur.
 
-### Message Broadcasting
-https://github.com/ansh3ll/pesapal-dev-challenge
+#### Message Broadcasting
+https://github.com/ANSH3LL/pesapal-dev-challenge/blob/4383bb321058776605364583181eec91b4c53f1b/server.py#L102-L115
 
 Commands sent from clients are only relayed to clients of a lower rank. The server also checks the command syntax for correctness.
 
-### Command Relay
-https://github.com/ansh3ll/pesapal-dev-challenge
+#### Command Relay
+https://github.com/ANSH3LL/pesapal-dev-challenge/blob/4383bb321058776605364583181eec91b4c53f1b/server.py#L141-L159
 
 The client is very simple and only runs one thread for the sake of receiving incoming messages. Anything typed in the terminal is sent as-is to the server.
 
-### Client Logic
-https://github.com/ansh3ll/pesapal-dev-challenge
+#### Client Logic
+https://github.com/ANSH3LL/pesapal-dev-challenge/blob/4383bb321058776605364583181eec91b4c53f1b/client.py#L4-L32
 
 ## Screenshots
-### Client connection and commands
+#### Client connection and commands
 ![](screenshots/connect.png)
-### Server has maximum clients connected
+#### Server has maximum clients connected
 ![](screenshots/full.png)
 ![](screenshots/full2.png)
-### Client rank promotion
+#### Client rank promotion
 ![](screenshots/promotion.png)
